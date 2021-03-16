@@ -1,20 +1,11 @@
-import PropTypes from 'prop-types';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 
-const App = ({ result }) => (
+const App = () => (
   <>
-    {<Display result={result} />}
+    {<Display />}
     {<ButtonPanel />}
   </>
 );
-
-App.propTypes = {
-  result: PropTypes.string,
-};
-
-App.defaultProps = {
-  result: '0',
-};
 
 export default App;
