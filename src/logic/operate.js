@@ -1,12 +1,14 @@
 import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
+  const num1 = new Big(numberOne);
+
   switch (operation) {
-    case '+': return Big(numberOne).add(numberTwo).c;
-    case '-': return Big(numberOne).minus(numberTwo).c;
-    case '*': return Big(numberOne).times(numberTwo).c;
-    case '/': return Big(numberOne).div(numberTwo).c;
-    case '%': return 100 * Big(numberOne).div(numberTwo).c;
+    case '+': return num1.plus(numberTwo).toFixed();
+    case '-': return num1.minus(numberTwo).toFixed();
+    case '*': return num1.times(numberTwo).toFixed();
+    case '/': return num1.div(numberTwo).toFixed();
+    case '%': return 100 * num1.div(numberTwo).toFixed();
     default: return null;
   }
 };
