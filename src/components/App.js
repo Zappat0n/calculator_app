@@ -25,7 +25,7 @@ class App extends React.Component {
     return (
       <>
         {<Display result={next} />}
-        {<ButtonPanel clickHandler={this.handleClick()} />}
+        {<ButtonPanel clickHandler={this.handleClick} />}
       </>
     );
   }

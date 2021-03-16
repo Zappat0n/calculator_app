@@ -2,38 +2,32 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 
 const ButtonPanel = ({ clickHandler }) => {
-  const createButton = name => (<Button name={name} onClick={clickHandler} />);
+  const handleClick = buttonName => clickHandler(buttonName);
+
+  const createButtons = names => {
+    const items = [];
+    for (let i = 0; i < names.length; i += 1) {
+      items.push(<Button name={names[i]} clickHandler={handleClick} />);
+    }
+    return items;
+  };
 
   return (
     <>
       <div className="group-1">
-        {createButton('AC')}
-        {createButton('+/-')}
-        {createButton('%')}
-        {createButton('/')}
+        {createButtons(['AC', '+/-', '%', '/'])}
       </div>
       <div className="group-2">
-        {createButton('7')}
-        {createButton('8')}
-        {createButton('9')}
-        {createButton('X')}
+        {createButtons(['7', '8', '9', 'X'])}
       </div>
       <div className="group-3">
-        {createButton('4')}
-        {createButton('5')}
-        {createButton('6')}
-        {createButton('-')}
+        {createButtons(['4', '5', '6', '-'])}
       </div>
       <div className="group-4">
-        {createButton('1')}
-        {createButton('2')}
-        {createButton('3')}
-        {createButton('+')}
+        {createButtons(['1', '2', '3', '+'])}
       </div>
       <div className="group-5">
-        {createButton('0')}
-        {createButton('.')}
-        {createButton('=')}
+        {createButtons(['0', '.', '='])}
       </div>
     </>
   );
