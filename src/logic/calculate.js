@@ -19,10 +19,10 @@ const calculate = (calculatorData, buttonName) => {
 
   switch (buttonName) {
     case 'AC': updateData('0', '0', null); break;
-    case '+/-': updateData(total, -1 * Big(next), operation); break;
+    case '+/-': updateData(total, Big(next).times(-1), operation); break;
     case '+': case '-': case '*': case '/': case '%':
       updateResult(operate(total, next, operation)); break;
-    case '0': case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9': case '.': updateData(total, Big(`${next}${buttonName}`), operation); break;
+    case '0': case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9': case '.': updateData(total, `${next}${buttonName}`, operation); break;
     case '=': updateResult(operate(total, next, operation)); break;
     default: return null;
   }
