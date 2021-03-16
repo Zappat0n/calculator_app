@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App';
 import './styles.css';
-
-const Main = () => (<p>Hello world!</p>);
 
 ReactDOM.render(
   <React.StrictMode>
-    {' '}
-    <Main />
+    <App />
   </React.StrictMode>,
   document.getElementById('root'),
 );
