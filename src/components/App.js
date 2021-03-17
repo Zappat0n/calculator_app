@@ -8,17 +8,17 @@ class App extends React.Component {
     super();
 
     this.state = {
-      // total: null,
-      next: null,
-      // operation: null,
+      total: 0,
+      next: 0,
+      operation: null,
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(buttonName) {
-    const { next } = this.state;
-    console.log(buttonName, next);
+    const newData = calculate(this.state, buttonName);
+    this.setState(newData);
   }
 
   render() {
