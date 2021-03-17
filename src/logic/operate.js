@@ -9,7 +9,7 @@ const operate = (numberOne, numberTwo, operation) => {
     case '-': return num1.minus(num2).toFixed();
     case '*': return num1.times(num2).toFixed();
     case '/': return num1.div(num2).toFixed();
-    case '%': return 100 * num1.div(num2).toFixed();
+    case '%': return num1.times(100).div(num2).toFixed();
     default: return null;
   }
 };
