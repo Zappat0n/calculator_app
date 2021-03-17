@@ -1,5 +1,5 @@
 import Big from 'big.js';
-import operate from './operate';
+import { operate, OPERATORS } from './operate';
 
 const calculate = (calculatorData, buttonName) => {
   let { total, next } = calculatorData;
@@ -19,6 +19,12 @@ const calculate = (calculatorData, buttonName) => {
     newData.operation = buttonName === '=' ? null : buttonName;
   };
 
+  const indexOfOperator = () => OPERATORS.reduce(
+    (result, operator) => (next.indexOf(operator) !== -1 ? next.indexOf(operator) : result), -1,
+  );
+
+  const index = indexOfOperator();
+
   switch (buttonName) {
     case 'AC':
       newData.total = '';
@@ -32,13 +38,25 @@ const calculate = (calculatorData, buttonName) => {
     case '-':
     case '*':
     case '/':
-    case '%':
-      if (next === '0') {
-        updateData(total, 0, buttonName);
-      } else if (total === '0') {
-        updateData(next, 0, buttonName);
+      if (index !== -1) {
+        if (OPERATORS.reduce(
+          (result, operator) => (result || next[next.length - 1] === operator), false,
+        )) {
+          next = next.slice(0, next.length - 1) + buttonName;
+          updateData(total, next, null);
+        } else {
+          updateResult(operate(total, next, buttonName));
+        }
       } else {
-        updateResult(operate(total, next, calculatorData.operation));
+        updateData(total, `${next}${buttonName}`, null);
+      }
+      break;
+    case '%':
+      if (index !== -1) {
+        const num2 = next.slice(index + 1, next.length);
+        updateData(total, `${next.slice(0, index + 1)}${Big(num2).div(100)}`, null);
+      } else {
+        updateResult(operate(total, `${next}/100`, null));
       }
       break;
     case '0':
@@ -65,8 +83,8 @@ const calculate = (calculatorData, buttonName) => {
       }
       break;
     case '=':
-      if (calculatorData.operation) {
-        updateResult(operate(total, next, calculatorData.operation));
+      if (index !== -1) {
+        updateResult(operate(total, next, null));
       } else {
         return calculatorData;
       }
