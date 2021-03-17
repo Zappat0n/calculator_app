@@ -8,8 +8,8 @@ class App extends React.Component {
     super();
 
     this.state = {
-      total: 0,
-      next: 0,
+      total: null,
+      next: null,
       operation: null,
     };
 
