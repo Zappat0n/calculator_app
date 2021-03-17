@@ -18,7 +18,7 @@ const ButtonPanel = ({ clickHandler }) => {
         {createButtons(['AC', '+/-', '%', '/'])}
       </div>
       <div className="group-2">
-        {createButtons(['7', '8', '9', 'X'])}
+        {createButtons(['7', '8', '9', '*'])}
       </div>
       <div className="group-3">
         {createButtons(['4', '5', '6', '-'])}
