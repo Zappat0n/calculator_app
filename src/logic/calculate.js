@@ -5,7 +5,7 @@ const calculate = (calculatorData, buttonName) => {
   let { total, next } = calculatorData;
   const newData = calculatorData;
   total = total || '0';
-  next = next || '0';
+  next = (!next || next === 'inf') ? '0' : next;
 
   const updateData = (_total, _next, _operation = calculatorData.operation) => {
     newData.total = _total;
