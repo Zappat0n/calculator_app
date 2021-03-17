@@ -1,12 +1,19 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # Calculator
-![Top Page Screenshot](./src/assets/icons/screenshot.png)
+![Top Page Screenshot](./src/assets/screenshot.png)
 
 
 ## About the Project
 
-Calculator build using [create-react-app](https://create-react-app.dev/).
-A tool built by developers at Facebook to help you build [React](https://reactjs.org/) applications, saving you from time-consuming setup and configuration.
+Calculator built using [React](https://reactjs.org/).<br>
+Project specifications made by [Microverse](https://www.microverse.org/).
+
+This is a calculator where you can perform the basic operations with numbers:
+- Addition
+- Subtraction
+- Multiplication
+- Division
+- Percentage calculation
 
 ## Table of Contents
 
