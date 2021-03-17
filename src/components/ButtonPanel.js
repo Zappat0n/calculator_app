@@ -1,37 +1,40 @@
+import PropTypes from 'prop-types';
 import Button from './Button';
 
-const ButtonPanel = () => (
-  <>
-    <div className="group-1">
-      <Button name="AC" />
-      <Button name="+/-" />
-      <Button name="%" />
-      <Button name="/" />
-    </div>
-    <div className="group-2">
-      <Button name="7" />
-      <Button name="8" />
-      <Button name="9" />
-      <Button name="X" />
-    </div>
-    <div className="group-3">
-      <Button name="4" />
-      <Button name="5" />
-      <Button name="6" />
-      <Button name="-" />
-    </div>
-    <div className="group-4">
-      <Button name="1" />
-      <Button name="2" />
-      <Button name="3" />
-      <Button name="+" />
-    </div>
-    <div className="group-5">
-      <Button name="0" />
-      <Button name="." />
-      <Button name="=" />
-    </div>
-  </>
-);
+const ButtonPanel = ({ clickHandler }) => {
+  const handleClick = buttonName => clickHandler(buttonName);
+
+  const createButtons = names => {
+    const items = [];
+    for (let i = 0; i < names.length; i += 1) {
+      items.push(<Button name={names[i]} key={i} clickHandler={handleClick} />);
+    }
+    return items;
+  };
+
+  return (
+    <>
+      <div className="group-1">
+        {createButtons(['AC', '+/-', '%', '/'])}
+      </div>
+      <div className="group-2">
+        {createButtons(['7', '8', '9', '*'])}
+      </div>
+      <div className="group-3">
+        {createButtons(['4', '5', '6', '-'])}
+      </div>
+      <div className="group-4">
+        {createButtons(['1', '2', '3', '+'])}
+      </div>
+      <div className="group-5">
+        {createButtons(['0', '.', '='])}
+      </div>
+    </>
+  );
+};
+
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+};
 
 export default ButtonPanel;

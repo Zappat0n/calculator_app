@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
 const Display = props => {
-  const { result } = props;
+  let { result } = props;
+  result = result || '0';
 
   return (
     <p>
