@@ -11,14 +11,12 @@ const calculate = (calculatorData, buttonName) => {
     newData.total = _total;
     newData.next = _next.toString();
     newData.operation = _operation;
-    console.log(newData, buttonName);
   };
 
   const updateResult = result => {
     newData.total = '0';
     newData.next = result.toString();
     newData.operation = buttonName === '=' ? null : buttonName;
-    console.log(newData, buttonName);
   };
 
   switch (buttonName) {
@@ -35,7 +33,9 @@ const calculate = (calculatorData, buttonName) => {
     case '*':
     case '/':
     case '%':
-      if (total === '0') {
+      if (next === '0') {
+        updateData(total, 0, buttonName);
+      } else if (total === '0') {
         updateData(next, 0, buttonName);
       } else {
         updateResult(operate(total, next, calculatorData.operation));
