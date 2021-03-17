@@ -53,6 +53,9 @@ const calculate = (calculatorData, buttonName) => {
     case '9':
     case '.':
       if (next !== '0' || buttonName === '.') {
+        if (buttonName === '.' && next.indexOf('.') !== -1) {
+          return calculatorData;
+        }
         updateData(total, `${next}${buttonName}`);
       } else {
         if (buttonName === '0') { return calculatorData; }
