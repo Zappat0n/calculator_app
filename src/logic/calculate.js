@@ -19,11 +19,12 @@ const calculate = (calculatorData, buttonName) => {
     newData.operation = buttonName === '=' ? null : buttonName;
   };
 
-  const indexOfOperator = () => OPERATORS.reduce(
-    (result, operator) => (next.indexOf(operator) !== -1 ? next.indexOf(operator) : result), -1,
-  );
+  const indexOfOperator = () => OPERATORS.reduce((result, operator) => (
+    next.slice(1, next.length - 1).indexOf(operator) !== -1
+      ? next.slice(1, next.length - 1).indexOf(operator) : result), -1);
 
   const index = indexOfOperator();
+  const indexWithoutMinus = ['*', '+', '/'].reduce((result, operator) => (next.indexOf(operator) !== -1 ? next.indexOf(operator) : result), -1);
 
   switch (buttonName) {
     case 'AC':
@@ -32,7 +33,11 @@ const calculate = (calculatorData, buttonName) => {
       newData.operation = null;
       break;
     case '+/-':
-      updateData(total, Big(next).times(new Big(-1)).toFixed());
+      if (indexWithoutMinus === -1) {
+        updateData(total, Big(next).times(new Big(-1)).toFixed());
+      } else {
+        updateData(total, `${next.slice(0, indexWithoutMinus + 1)}${Big(next.slice(indexWithoutMinus + 1, next.length)).times(new Big(-1)).toFixed()}`, null);
+      }
       break;
     case '+':
     case '-':
