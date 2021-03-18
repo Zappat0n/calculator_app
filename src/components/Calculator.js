@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import calculate from '../logic/calculate';
-import '../assets/styles.css';
 import NavBar from './NavBar';
+import style from '../assets/Calculator.module.css';
 
 const Calculator = () => {
   const [total, setTotal] = useState(null);
@@ -21,9 +21,14 @@ const Calculator = () => {
 
   return (
     <>
-      {<NavBar message="Let’s do some math!" />}
-      {<Display result={next} />}
-      {<ButtonPanel clickHandler={handleClick} />}
+      <NavBar />
+      <div className={style.container}>
+        <h2>Let&apos;s do some math!</h2>
+        <div className={style.calculator}>
+          {<Display result={next} />}
+          {<ButtonPanel clickHandler={handleClick} />}
+        </div>
+      </div>
     </>
   );
 };
