@@ -7,7 +7,7 @@ p {
   background: gray;
   height: 100px;
   color: white;
-  font: bold 4rem 'Syne Mono';
+  font: bold 4rem 'Syne Mono', monospace;
   letter-spacing: 5px;
   padding: 1rem;
   margin-bottom: 0.5rem;
