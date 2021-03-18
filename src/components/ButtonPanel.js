@@ -8,7 +8,7 @@ const ButtonPanel = ({ clickHandler }) => {
   const createButtons = names => {
     const items = [];
     for (let i = 0; i < names.length; i += 1) {
-      items.push(<Button name={names[i]} key={i} clickHandler={handleClick} />);
+      items.push(<Button name={names[i]} key={i} clickHandler={handleClick} wide={names[i] === '0'} />);
     }
     return items;
   };
