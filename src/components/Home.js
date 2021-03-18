@@ -1,9 +1,11 @@
 import React from 'react';
 import NavBar from './NavBar';
+import '../assets/Home.module.css';
 
 const Home = () => (
   <>
-    <NavBar message="Welcome to our page!" />
+    <NavBar />
+    <h2>Welcome to our page!</h2>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
       labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
