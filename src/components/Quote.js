@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './NavBar';
 
-const Home = () => (
+const Quote = () => (
   <>
     <NavBar message="" />
     <h4>
@@ -11,4 +11,4 @@ const Home = () => (
   </>
 );
 
-export default Home;
+export default Quote;
