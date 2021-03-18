@@ -15,8 +15,8 @@ const operate = (numberOne, numberTwo, operation) => {
 
   const checkOperator = op => {
     if (numberTwo.lastIndexOf(op) !== -1) {
-      const num1 = new Big(numberTwo.slice(0, numberTwo.indexOf(op)));
-      const num2 = new Big(numberTwo.slice(numberTwo.indexOf(op) + 1));
+      const num1 = new Big(numberTwo.slice(0, numberTwo.lastIndexOf(op)));
+      const num2 = new Big(numberTwo.slice(numberTwo.lastIndexOf(op) + 1));
       return calculate(num1, num2, op);
     }
     return null;
