@@ -7,7 +7,7 @@ const operate = (numberOne, numberTwo, operation) => {
     switch (op) {
       case '+': return num1.plus(num2).toFixed();
       case '*': return num1.times(num2).toFixed();
-      case '/': return numberTwo !== '0' ? num1.div(num2).toFixed() : 'inf';
+      case '/': return num2.toFixed() !== '0' ? num1.div(num2).toFixed() : 'inf';
       case '-': return num1.minus(num2).toFixed();
       default: return null;
     }
