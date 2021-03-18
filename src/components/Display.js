@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import '../assets/Display.module.css';
 
 const Display = props => {
   let { result } = props;

@@ -1,0 +1,11 @@
+p {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: gray;
+  height: 100px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+}
