@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Button from './Button';
+import style from '../assets/ButtonPanel.module.css';
 
 const ButtonPanel = ({ clickHandler }) => {
   const handleClick = buttonName => clickHandler(buttonName);
@@ -7,29 +8,29 @@ const ButtonPanel = ({ clickHandler }) => {
   const createButtons = names => {
     const items = [];
     for (let i = 0; i < names.length; i += 1) {
-      items.push(<Button name={names[i]} key={i} clickHandler={handleClick} />);
+      items.push(<Button name={names[i]} key={i} clickHandler={handleClick} wide={names[i] === '0'} />);
     }
     return items;
   };
 
   return (
-    <>
-      <div className="group-1">
+    <div className={style.panel}>
+      <div className={style.group}>
         {createButtons(['AC', '+/-', '%', '/'])}
       </div>
-      <div className="group-2">
+      <div className={style.group}>
         {createButtons(['7', '8', '9', '*'])}
       </div>
-      <div className="group-3">
+      <div className={style.group}>
         {createButtons(['4', '5', '6', '-'])}
       </div>
-      <div className="group-4">
+      <div className={style.group}>
         {createButtons(['1', '2', '3', '+'])}
       </div>
-      <div className="group-5">
+      <div className={style.group}>
         {createButtons(['0', '.', '='])}
       </div>
-    </>
+    </div>
   );
 };
 
