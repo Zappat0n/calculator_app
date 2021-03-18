@@ -1,29 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import style from '../assets/NavBar.module.css';
 
-const NavBar = props => {
-  const { message } = props;
-
-  return (
-    <>
-      <div className="top">
-        <h1>Math Magicians</h1>
-        <Link to="/">Home</Link>
-        <Link to="/calculator">Calculator</Link>
-        <Link to="/quote">Quote</Link>
+const NavBar = () => (
+  <>
+    <div className={style.top}>
+      <h1>Math Magicians</h1>
+      <div className={style.links}>
+        <Link className={style.link} to="/">Home</Link>
+        <Link className={style.link} to="/calculator">Calculator</Link>
+        <Link className={style.link} to="/quote">Quote</Link>
       </div>
-      <h3>{message}</h3>
-    </>
-  );
-};
-
-NavBar.defaultProps = {
-  message: null,
-};
-
-NavBar.propTypes = {
-  message: PropTypes.string,
-};
+    </div>
+  </>
+);
 
 export default NavBar;
