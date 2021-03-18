@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import style from '../assets/Button.module.css';
 
 const Button = props => {
   const { name, clickHandler } = props;
@@ -9,7 +10,7 @@ const Button = props => {
   };
 
   return (
-    <button type="button" onClick={handleClick}>{ name }</button>
+    <button type="button" className={name === '0' ? style.button0 : style.button} onClick={handleClick}>{ name }</button>
   );
 };
 
