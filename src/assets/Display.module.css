@@ -1,15 +1,14 @@
-@import './styles.css';
-
-p {
+.display {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   background: gray;
   height: 100px;
   color: white;
-  font: bold 4rem 'Syne Mono', monospace;
+  font: bold 4rem 'Syne Mono', monospace !important;
   letter-spacing: 5px;
   padding: 1rem;
   margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   border: 2px solid black;
 }
