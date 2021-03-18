@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
+
 body {
   display: flex;
-}
+  justify-content: center;
+  background-color: #0cbaba;
+  background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+  height: 100vw;
+  }
 
 #root {
   width: 700px;

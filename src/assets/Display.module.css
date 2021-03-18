@@ -1,3 +1,5 @@
+@import './styles.css';
+
 p {
   display: flex;
   justify-content: flex-end;
@@ -5,7 +7,9 @@ p {
   background: gray;
   height: 100px;
   color: white;
-  font-size: 2rem;
-  font-weight: bold;
+  font: bold 4rem 'Syne Mono';
+  letter-spacing: 5px;
   padding: 1rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid black;
 }
