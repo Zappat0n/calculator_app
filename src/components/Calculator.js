@@ -3,8 +3,9 @@ import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import calculate from '../logic/calculate';
 import '../assets/styles.css';
+import NavBar from './NavBar';
 
-const App = () => {
+const Calculator = () => {
   const [total, setTotal] = useState(null);
   const [next, setNext] = useState(null);
   const [operation, setOperation] = useState(null);
@@ -20,10 +21,11 @@ const App = () => {
 
   return (
     <>
+      {<NavBar message="Let’s do some math!" />}
       {<Display result={next} />}
       {<ButtonPanel clickHandler={handleClick} />}
     </>
   );
 };
 
-export default App;
+export default Calculator;
