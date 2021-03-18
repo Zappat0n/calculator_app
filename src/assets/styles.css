@@ -1,0 +1,7 @@
+body {
+  display: flex;
+}
+
+#root {
+  width: 700px;
+}
