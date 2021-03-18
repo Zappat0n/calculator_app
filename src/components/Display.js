@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import '../assets/Display.module.css';
+import style from '../assets/Display.module.css';
 
 const Display = props => {
   let { result } = props;
   result = result || '0';
 
   return (
-    <p>
+    <p className={style.display}>
       { result }
     </p>
   );
