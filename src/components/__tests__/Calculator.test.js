@@ -39,3 +39,21 @@ it('contains NavBar', () => {
   );
   expect(getByText('Math Magicians')).toBeInTheDocument();
 });
+
+it('contains Display', () => {
+  const { container } = render(
+    <Router history={history}>
+      <Calculator />
+    </Router>,
+  );
+  expect(container.children[1].children[1].firstChild.className).toBe('display');
+});
+
+it('contains Panel', () => {
+  const { container } = render(
+    <Router history={history}>
+      <Calculator />
+    </Router>,
+  );
+  expect(container.children[1].children[1].children[1].className).toBe('panel');
+});
