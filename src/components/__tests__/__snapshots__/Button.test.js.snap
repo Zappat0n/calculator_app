@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<button
+  onClick={[Function]}
+  style={
+    Object {
+      "background": "orange",
+      "font": "3rem 'Syne Mono'",
+      "height": "100%",
+      "textAlign": "center",
+      "width": "50%",
+    }
+  }
+  type="button"
+>
+  0
+</button>
+`;

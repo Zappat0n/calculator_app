@@ -34,7 +34,11 @@ const calculate = (calculatorData, buttonName) => {
       break;
     case '+/-':
       if (indexWithoutMinus === -1) {
-        updateData(total, Big(next).times(new Big(-1)).toFixed());
+        if (index === -1) {
+          updateData(total, Big(next).times(new Big(-1)).toFixed());
+        } else {
+          updateData(total, `${next.slice(0, next.lastIndexOf('-'))}+${next.slice(index + 2)}`);
+        }
       } else {
         updateData(total, `${next.slice(0, indexWithoutMinus + 1)}${Big(next.slice(indexWithoutMinus + 1, next.length)).times(new Big(-1)).toFixed()}`, null);
       }
