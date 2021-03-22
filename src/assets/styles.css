@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vw;
+}
+
+#root {
+  width: 95%;
+}
